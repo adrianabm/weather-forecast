@@ -47,11 +47,9 @@ class WeatherList extends Component {
     return (
       <div>
         <SearchBar />
-          <div className="table table-hover">
-            <div>
-              { this.props.weather.map(this.renderWeather) }
-            </div>
-          </div>
+        <div className="table table-hover">
+          { this.props.weather.map(this.renderWeather) }
+        </div>
       </div>
     )
   }
