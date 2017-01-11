@@ -33,6 +33,7 @@
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",
     "react-router": "^2.8.1",
+    "react-skycons": "^0.3.0",
     "redux": "^3.0.4",
     "redux-promise": "^0.5.3"
   }
