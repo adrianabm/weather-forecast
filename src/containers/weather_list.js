@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router'
+
+import SearchBar from './searchbar'
 
 
 class WeatherList extends Component {
@@ -10,23 +13,46 @@ class WeatherList extends Component {
     const temp = cityData.main.temp
     const iconId = cityData.weather[0].id
 
+    var bgColorClass = 'weather-widget '
+
+      // Set the background colour based on the temperature
+      if (temp >= 30) {
+          bgColorClass += 'very-warm';
+      }
+      else if (temp > 20 && temp < 30) {
+          bgColorClass += 'warm';
+      }
+      else if (temp > 10 && temp < 20) {
+          bgColorClass += 'normal';
+      }
+      else if (temp > 0 && temp < 10) {
+          bgColorClass += 'cold';
+      }
+      else if (temp <= 0) {
+          bgColorClass += 'very-cold';
+    }
+
     return (
-      <tr key={ city }>
-        <td>{ city }, { country }</td>
-        <td>{ temp.toFixed(1) } °C </td>
-        <td><i className={ "owf owf-" + iconId }></i></td>
-        <td >{ iconId }</td>
-      </tr>
+      <Link to={`/${ cityData.id }`} key={ cityData.id }>
+        <div className={ bgColorClass }>
+          <div>{ city }, { country }</div>
+          <div>{ temp.toFixed(1) } °C </div>
+          <div><i className={ "list-icon owf owf-" + iconId }></i></div>
+        </div>
+      </Link>
     )
   }
 
   render() {
     return (
-      <table className="table table-hover">
-        <tbody>
-          { this.props.weather.map(this.renderWeather) }
-        </tbody>
-      </table>
+      <div>
+        <SearchBar />
+          <div className="table table-hover">
+            <div>
+              { this.props.weather.map(this.renderWeather) }
+            </div>
+          </div>
+      </div>
     )
   }
 }

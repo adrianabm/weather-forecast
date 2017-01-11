@@ -8,14 +8,17 @@ import ReduxPromise from 'redux-promise'
 import App from './components/app'
 import reducers from './reducers'
 
+import WeatherList from './containers/weather_list'
+import WeatherDetail from './containers/weather_detail'
+
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore)
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <Router history={ browserHistory }>
       <Route path="/" component={ App }>
-        <IndexRoute component={ App } />
-        {/* <Route path="/" component={  } /> */}
+        <IndexRoute component={ WeatherList } />
+        <Route path="/:cityId" component={ WeatherDetail } />
       </Route>
     </Router>
   </Provider>

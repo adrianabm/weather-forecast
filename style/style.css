@@ -1,0 +1,33 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.list-icon {
+  font-size: 80px;
+}
+
+.search-input {
+  border: none;
+  border-bottom: 1px solid;
+  margin: 30px 0px;
+  width: 100%;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.weather-widget {
+  color: white;
+  font-family: league-gothic, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  /*padding: 5% 10%;*/
+  width: 100%;
+}
+
+.very-warm { background-color: #F75E50; }
+.warm { background-color: #EAC761; }
+.normal { background-color: #E8DF9C; }
+.cold { background-color: #91C09E; }
+.very-cold { background-color: #BAB9B5; }
