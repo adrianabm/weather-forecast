@@ -7,11 +7,13 @@ class WeatherList extends Component {
     const city =cityData.city.name
     const country =cityData.city.country
     const temp_now = cityData.list[0].main.temp
+    const icon = cityData.list[0].weather[0].icon
 
     return (
       <tr key={ city }>
         <td>{ city }, { country }</td>
-        <td>{ temp_now }</td>
+        <td>{ parseInt(temp_now) } °C </td>
+        <td>{ icon }</td>
       </tr>
     )
   }
