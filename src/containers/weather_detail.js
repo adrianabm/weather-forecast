@@ -18,7 +18,7 @@ class WeatherDetail extends Component {
   render() {
     return (
       <div>
-        { this.props.params.cityId }
+        { this.props.weatherDetail.name }
       </div>
     )
   }
