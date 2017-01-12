@@ -6,7 +6,6 @@ import { bindActionCreators } from 'redux'
 class WeatherDetail extends Component {
   constructor(props) {
     super(props)
-    console.log(props)
   }
 
   componentDidMount() {
@@ -16,9 +15,19 @@ class WeatherDetail extends Component {
 
 
   render() {
+    const { city } = this.props.weatherDetail
+    const { list } = this.props.weatherDetail
+    console.log(list)
+
+    if (!city) {
+      return <div>Loading...</div>
+    }
+
     return (
       <div>
-        { this.props.weatherDetail.name }
+        <h2>{ city.name }, { city.country }</h2>
+        <h1>{ list[0].main.temp.toFixed(1) } °C</h1>
+        <i className={ " wi wi-owm-" + list[0].weather[0].id }></i>
       </div>
     )
   }

@@ -8,10 +8,11 @@ import SearchBar from './searchbar'
 class WeatherList extends Component {
 
   renderWeather(cityData) {
-    const city = cityData.name
-    const country = cityData.sys.country
-    const temp = cityData.main.temp
-    const iconId = cityData.weather[0].id
+    const city = cityData.city.name
+    const id = cityData.city.id
+    const country = cityData.city.country
+    const temp = cityData.list[0].main.temp
+    const iconId = cityData.list[0].weather[0].id
 
     var bgColorClass = 'weather-widget '
       // Set the background colour based on the temperature
@@ -32,8 +33,8 @@ class WeatherList extends Component {
     }
 
     return (
-      <Link to={`/${ cityData.id }`}
-        key={ cityData.id }
+      <Link to={`/${ id }`}
+        key={ id }
         className="list-link">
         <div className={ bgColorClass + " row" }>
           <div className="col-xs-12 col-sm-6">
