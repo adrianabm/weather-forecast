@@ -35,10 +35,14 @@ class WeatherList extends Component {
       <Link to={`/${ cityData.id }`}
         key={ cityData.id }
         className="list-link">
-        <div className={ bgColorClass }>
-          <h2>{ city }, { country }</h2>
-          <div>{ temp.toFixed(1) } °C </div>
-          <div><i className={ "list-icon wi wi-owm-" + iconId }></i></div>
+        <div className={ bgColorClass + " row" }>
+          <div className="col-xs-12 col-sm-6">
+            <h5>{ city }, { country }</h5>
+            <h2 className="margin-top">{ temp.toFixed(1) } °C </h2>
+          </div>
+          <div className="list-icon col-xs-12 col-sm-6">
+            <i className={ " wi wi-owm-" + iconId }></i>
+          </div>
         </div>
       </Link>
     )

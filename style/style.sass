@@ -1,3 +1,9 @@
+@import 'mixins'
+
+// Fonts
+$font-header: 'Quicksand', sans-serif
+$font-body: 'Raleway', sans-serif
+
 // Colors
 $very-warm: #F75E50
 $warm: #EAC761
@@ -6,38 +12,58 @@ $cold: #06799F
 $very-cold: #BAB9B5
 
 body
-  font-family: 'Roboto', sans-serif
+  font-family: $font-body
 
+h1, h2, h3, h4, h5
+  font-family: $font-header
+
+  @include mobile
+    text-align: center
 
 .list-icon
   font-size: 80px
+  text-align: right
+
+  @include mobile
+    text-align: center
 
 .list-link:hover
   text-decoration: none
 
+.margin-top
+  margin-top: 50px
 
 .search-input
   border: none
   border-bottom: 1px solid
-  margin: 30px 0px
+  margin: 3rem 0
   width: 100%
-
 
 .search-input:focus
   outline: none
 
 
 .weather-widget
+  border-radius: 1rem
   color: white
   font-family: league-gothic, sans-serif
   font-weight: 100
   font-style: normal
+  margin-bottom: 1rem
   padding: 5% 10%
-  width: 100%
+
+  @include mobile
+    padding: 2%
 
 
-.very-warm { background-color: $very-warm }
-.warm { background-color: $warm }
-.normal { background-color: $normal }
-.cold { background-color: $cold }
-.very-cold { background-color: $very-cold }
+
+  &.very-warm
+     +setBgColorAndHover($very-warm)
+  &.warm
+    +setBgColorAndHover($warm)
+  &.normal
+    +setBgColorAndHover($normal)
+  &.cold
+    +setBgColorAndHover($cold)
+  &.very-cold
+    +setBgColorAndHover($very-cold)
