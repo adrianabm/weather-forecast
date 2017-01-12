@@ -14,7 +14,6 @@ class WeatherList extends Component {
     const iconId = cityData.weather[0].id
 
     var bgColorClass = 'weather-widget '
-
       // Set the background colour based on the temperature
       if (temp >= 30) {
           bgColorClass += 'very-warm';
@@ -33,11 +32,13 @@ class WeatherList extends Component {
     }
 
     return (
-      <Link to={`/${ cityData.id }`} key={ cityData.id }>
+      <Link to={`/${ cityData.id }`}
+        key={ cityData.id }
+        className="list-link">
         <div className={ bgColorClass }>
-          <div>{ city }, { country }</div>
+          <h2>{ city }, { country }</h2>
           <div>{ temp.toFixed(1) } °C </div>
-          <div><i className={ "list-icon owf owf-" + iconId }></i></div>
+          <div><i className={ "list-icon wi wi-owm-" + iconId }></i></div>
         </div>
       </Link>
     )
@@ -47,7 +48,7 @@ class WeatherList extends Component {
     return (
       <div>
         <SearchBar />
-        <div className="table table-hover">
+        <div className="table">
           { this.props.weather.map(this.renderWeather) }
         </div>
       </div>
