@@ -14,7 +14,7 @@ class WeatherList extends Component {
     const temp = cityData.list[0].main.temp
     const iconId = cityData.list[0].weather[0].id
 
-    var bgColorClass = 'weather-widget '
+    var bgColorClass = 'list-weather-widget '
       // Set the background colour based on the temperature
       if (temp >= 30) {
           bgColorClass += 'very-warm';
