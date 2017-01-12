@@ -15,9 +15,9 @@ class WeatherDetail extends Component {
 
 
   render() {
-    const { city } = this.props.weatherDetail
-    const { list } = this.props.weatherDetail
-    console.log(list)
+    const weather = this.props.weatherDetail
+    const { city, list } = weather
+    console.log(weather)
 
     if (!city) {
       return <div>Loading...</div>
@@ -27,7 +27,15 @@ class WeatherDetail extends Component {
       <div>
         <h2>{ city.name }, { city.country }</h2>
         <h1>{ list[0].main.temp.toFixed(1) } °C</h1>
-        <i className={ " wi wi-owm-" + list[0].weather[0].id }></i>
+        <div>
+          <i className={ " wi wi-owm-" + list[0].weather[0].id }></i>
+        </div>
+        <p>{ list[0].weather[0].description } </p>
+        <p> Wind: { list[0].wind.speed } m/s </p>
+        <p> Rain: { list[0].main.humidity } % </p>
+
+        {/* forecast for the following days */}
+
       </div>
     )
   }
