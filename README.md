@@ -1,6 +1,7 @@
 #[WIP] Weather Forecast
 
-![weathergif](https://cloud.githubusercontent.com/assets/20054414/21895397/e0656d44-d8e2-11e6-9e64-cfbdab1b1d1c.gif)
+![weathergif](https://cloud.githubusercontent.com/assets/20054414/21983331/0bb63d46-dbf1-11e6-9581-cf3bff005924.gif)
+![weather-detail](https://cloud.githubusercontent.com/assets/20054414/21983517/0070707c-dbf2-11e6-82f5-35c8273ceab1.png)
 
 ## About 
 After finishing [this](https://github.com/adrianabm/weather-app) I decided to give another try on making a weather app UI on my own. It is still being improved :)
